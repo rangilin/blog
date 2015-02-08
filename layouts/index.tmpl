@@ -1,8 +1,8 @@
 {{ define "content" }}
-<div>Index</div>
+<h1>Rangi Lin's blog</h1>
 <ul>
   {{ range .Posts }}
-    <li><a href="{{ .Key }}">{{ .Title }}</a></li>
+    <li><a href="{{ .Key }}">{{ .Date }} : {{ .Title }}</a></li>
   {{ end }}
 </ul>
 {{ end }}
