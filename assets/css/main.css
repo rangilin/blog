@@ -1,0 +1,113 @@
+/* ---------------------------------------------------------------------- */
+/* Common                                                                 */
+/* ---------------------------------------------------------------------- */
+body {
+  background-color: #FFFFFF;
+  color: #3A3A3A;
+  font-family: "Open Sans", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+}
+
+:focus {
+  outline: 0;
+}
+
+img {
+  width: 100%
+}
+
+pre {
+  background-color: #EEE;
+  width: auto;
+  max-height: 600px;
+  overflow: auto;
+  padding: 5px;
+  font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+  vertical-align: baseline;
+}
+
+code {
+  background-color: #EEE;
+  padding: 1px 5px;
+  font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+}
+/* -------------------------------------------------- Link */
+a {
+  transition: color 0.2s ease-out 0s;
+  color: #3A3A3A;
+}
+
+a:hover {
+  color: #EE4938;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Components                                                             */
+/* ---------------------------------------------------------------------- */
+/* -------------------------------------------------- Header */
+#header {
+  height: 90px;
+  max-width: 768px;
+  margin: 1em auto 0;
+}
+
+/* -------------------------------------------------- Menus */
+#menu {
+  text-align: left;
+  line-height: 90px;
+  border-bottom: 2px solid #EEEEEE;
+}
+
+#menu a {
+  text-decoration: none;
+}
+
+#menu ul {
+  float: right;
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+}
+
+#menu li {
+  float: left;
+}
+
+#menu-heading {
+  font-size: 1.6em;
+  font-weight: 700;
+}
+/* -------------------------------------------------- Content */
+#content {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Media Queries                                                          */
+/* ---------------------------------------------------------------------- */
+@media screen and (min-width : 769px) {
+  #menu ul {
+    width: 40%
+  }
+  #menu li {
+    width: 33%
+  }
+}
+
+@media screen and (max-width : 768px) {
+  #menu ul {
+    width: 50%;
+  }
+  #menu li {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width : 480px) {
+  #menu ul {
+    width: 100%;
+  }
+  #menu li {
+    width: 33%;
+  }
+}
