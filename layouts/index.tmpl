@@ -2,7 +2,7 @@
 <a href="{{ .Conf.BaseUrl }}" ><h1>Rangi Lin's blog</h1></a>
 <ul>
   {{ range .Posts }}
-    <li><a href="{{ .Key }}">{{ .Date }} : {{ .Title }}</a></li>
+    <li><a href="{{ .Url }}">{{ .Date }} : {{ .Title }}</a></li>
   {{ end }}
 </ul>
 {{ end }}

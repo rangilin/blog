@@ -1,7 +1,7 @@
 {{ define "content"}}
 
 <div>
-  <h1>{{ .Post.Title }}</h1>
+  <a href="{{ .Post.Url }}"><h1>{{ .Post.Title }}</h1></a>
   <div>{{ .Post.HTMLContent }}</div>
 </div>
 {{ end }}
