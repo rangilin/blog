@@ -2,7 +2,9 @@
 <a href="{{ .Conf.BaseUrl }}" ><h1>Rangi Lin's blog</h1></a>
 <ul>
   {{ range .Posts }}
-    <li><a href="{{ .Url }}">{{ .Date }} : {{ .Title }}</a></li>
+    {{ if not (.Variable "hide") }}
+      <li><a href="{{ .Url }}">{{ .Date }} : {{ .Title }}</a></li>
+    {{ end }}
   {{ end }}
 </ul>
 {{ end }}
