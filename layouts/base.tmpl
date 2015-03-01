@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
+    <div id="header">
+      <div id="menu">
+        <a id="menu-heading" href="{{ .Conf.BaseUrl }}" > /home/rangi/blog </a>
+        <ul>
+          <!-- <li><a href='{{ .Conf.BaseUrl }}{{ "about-me/" }}'><i class="fa fa-smile-o"></i> About </a></li> -->
+          <!-- <li><a href="/feed.xml"><i class="fa fa-rss"></i> RSS </a></li> -->
+        </ul>
+      </div>
+    </div>
     <div id="content">
       {{ template "content" . }}
     </div>

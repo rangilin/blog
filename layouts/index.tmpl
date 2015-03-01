@@ -1,5 +1,4 @@
 {{ define "content" }}
-<a href="{{ .Conf.BaseUrl }}" ><h1>Rangi Lin's blog</h1></a>
 <ul>
   {{ range .Posts }}
     {{ if not (.Variable "hide") }}
