@@ -2,6 +2,7 @@
 
 <div>
   <a href="{{ .Post.Url }}"><h1>{{ .Post.Title }}</h1></a>
+  <p> <i class="fa fa-calendar"></i> {{ .Post.Date }} </p>
   <div>{{ .Post.HTMLContent }}</div>
 </div>
 {{ end }}
