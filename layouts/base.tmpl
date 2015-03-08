@@ -9,14 +9,15 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/syntax.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="alternate" type="application/rss+xml" title="Rangi Lin's blog" href="{{ .Conf.BaseUrl }}feeds.xml">
   </head>
   <body>
     <div id="header">
       <div id="menu">
-        <a id="menu-heading" href="{{ .Conf.BaseUrl }}" > /home/rangi/blog </a>
+        <a id="menu-heading" href="{{ .Conf.BaseUrl }}" > Rangi Lin's blog </a> <small>my programming journal</small>
         <ul>
           <!-- <li><a href='{{ .Conf.BaseUrl }}{{ "about-me/" }}'><i class="fa fa-smile-o"></i> About </a></li> -->
-          <!-- <li><a href="/feed.xml"><i class="fa fa-rss"></i> RSS </a></li> -->
+          <li><a href="/feeds.xml"><i class="fa fa-rss"></i> RSS </a></li>
         </ul>
       </div>
     </div>
