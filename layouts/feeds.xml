@@ -10,7 +10,7 @@
           <title>{{ .Title }}</title>
           <description>{{ .Excerpt }}</description>
           <pubDate>{{ .RSSDate }}</pubDate>
-          <link>{{ .Url }}</link>
+          <link>{{ .Url }}?utm_source=rss&amp;utm_medium=rss_link&amp;utm_champion=rss</link>
           <guid isPermaLink="true">{{ .Url }}</guid>
         </item>
       {{ end }}
