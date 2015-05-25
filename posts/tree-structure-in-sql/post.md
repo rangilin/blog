@@ -72,7 +72,7 @@ title: Tree structure in SQL
     6			4			Fran	請加上個檢查。
     7			6			Kukla	加上去後就好了。
 
-#### 查詢 ####
+### 查詢 ###
 
 我們可以用 Join 靠一次查詢拿到下一階的資料
 
@@ -109,7 +109,7 @@ title: Tree structure in SQL
 
 除此之外，一口氣將所有資料讀出來，組成樹狀資料結構後放在 cache 提供查詢也是一種妥協的方式。只是這個方法在資料量大，或者是資料常修改次數高的時候能帶來的效益也有限。
 
-#### 修改 ####
+### 修改 ###
 
 雖然查詢很糟，可是修改樹狀結構的時候倒是十分容易。
 
@@ -126,7 +126,7 @@ title: Tree structure in SQL
 
     DELETE FROM comments WHERE comment_id = 4;
 
-#### 小結 ####
+### 小結 ###
 
 優點 :
 
@@ -163,7 +163,7 @@ title: Tree structure in SQL
     6			1/4/6/		Fran	請加上個檢查。
     7			1/4/6/7/	Kukla	加上去後就好了。
 
-#### 查詢 ####
+### 查詢 ###
 
 靠著 `path` 的資料，我們可以很輕易地查詢子樹狀結構：
 
@@ -191,7 +191,7 @@ comment 4 的所有子階：
     2			Kukla
     1			Ollie
 
-#### 修改 ####
+### 修改 ###
 
 為了要維護路徑，修改資料時就麻煩了。例如在 comment 7 下一層新增一筆評論：
 
@@ -210,7 +210,7 @@ comment 4 的所有子階：
 
     DELETE FROM comments WHERE path LIKE '1/4/%';
 
-#### 小結 ####
+### 小結 ###
 
 優點 :
 
@@ -299,7 +299,7 @@ Nested Sets 是一種藉由記錄樹的 [Pre-Order Tree Traversal](http://en.wik
 
 不管新增或搬移，都牽涉到更新許多其他的節點的 `nsleft`, `nsright`，操作也較複雜，因此這兩種資料操作是 Nested Sets 的罩門所在。
 
-#### 小結 ####
+### 小結 ###
 
 優點：
 
@@ -370,7 +370,7 @@ Closure Table 是將節點階層關係全部記錄下來的作法，一種空間
 
 ![Closure Table Tree](ClosureTableTree.png)
 
-#### 查詢 ####
+### 查詢 ###
 
 查詢 comment 4 與其所有子節點:
 
@@ -380,7 +380,7 @@ Closure Table 是將節點階層關係全部記錄下來的作法，一種空間
 
     SELECT c.* FROM comments AS c JOIN comment_tree_paths AS t ON c.comment_id = t.ancestor WHERE t.descendant = 6;
 
-#### 修改 ####
+### 修改 ###
 
 新增一筆 comment 到 comment 7 下:
 
@@ -435,7 +435,7 @@ Closure Table 是將節點階層關係全部記錄下來的作法，一種空間
 
 P.S : MySQL 似乎不允許 UPDATE/DELETE 時 reference 自己當條件，因此需要使用 derived table，看起來比較複雜一點。
 
-#### Closure Table 變型 ####
+### Closure Table 變型 ###
 
 如果有需要，Closure Table 還能夠透過增加記錄 ancestor 到 descendant 的階層距離，來改善需要針對特定層級拿取資料的查詢
 
@@ -459,7 +459,7 @@ comment 1 下三層的 comment :
 
     SELECT c.* FROM comments AS c JOIN comment_tree_paths AS t ON c.comment_id = t.ancestor WHERE ancestor = 1 AND path_length <= 3;
 
-#### 小結 ####
+### 小結 ###
 
 優點:
 
