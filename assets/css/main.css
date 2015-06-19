@@ -35,6 +35,12 @@ pre code {
    padding: 0px;
 }
 
+blockquote {
+   padding: 5px;
+   background-color: #EEE;
+   border-left: 5px solid #666;
+}
+
 /* -------------------------------------------------- Link */
 a {
   transition: color 0.2s ease-out 0s;
