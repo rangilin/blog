@@ -3,13 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Rangi Lin's blog</title>
+    {{ template "title" . }}
     <meta name="viewport" content="width=device-width">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/syntax.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="alternate" type="application/rss+xml" title="Rangi Lin's blog" href="{{ .Conf.BaseUrl }}feeds.xml">
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-63339693-1', 'auto');
+     ga('send', 'pageview');
+    </script>
   </head>
   <body>
     <div id="header">
@@ -17,7 +26,7 @@
         <a id="menu-heading" href="{{ .Conf.BaseUrl }}" > Rangi Lin's blog </a> <small>my random thought about everything</small>
         <ul>
           <!-- <li><a href='{{ .Conf.BaseUrl }}{{ "about-me/" }}'><i class="fa fa-smile-o"></i> About </a></li> -->
-          <li><a href="/feeds.xml"><i class="fa fa-rss"></i> RSS </a></li>
+          <li><a onclick="ga('send', 'pageview', '/feeds.xml')" href="/feeds.xml"><i class="fa fa-rss"></i> RSS </a></li>
         </ul>
       </div>
     </div>
